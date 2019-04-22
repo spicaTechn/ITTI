@@ -148,7 +148,7 @@ $_config = $this->helper('Sm\Market\Helper\Data');
                                                                     title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
                                                                     class="action tocart primary">
 																<span><?php /* @escapeNotVerified */
-																	echo __('Add to Cart') ?></span>
+																	echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
 															</button>
 														</form>
 													<?php else: ?>
@@ -274,7 +274,7 @@ $_config = $this->helper('Sm\Market\Helper\Data');
                                                                     title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
                                                                     class="action tocart primary">
 																<span><?php /* @escapeNotVerified */
-																	echo __('Add to Cart') ?></span>
+																	echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
 															</button>
 														</form>
 													<?php else: ?>

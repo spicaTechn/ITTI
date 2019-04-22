@@ -223,9 +223,9 @@ switch ($type = $block->getType()) {
                                                                     data-mage-init='{"redirectUrl": {"url": "<?php /* @escapeNotVerified */
                                                                     echo $block->getAddToCartUrl($_item) ?>"}}'
                                                                     type="button" title="<?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?>">
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                             </button>
                                                         <?php else: ?>
                                                             <?php $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
@@ -235,9 +235,9 @@ switch ($type = $block->getType()) {
                                                                     data-post='<?php /* @escapeNotVerified */
                                                                     echo $postData; ?>' type="button"
                                                                     title="<?php /* @escapeNotVerified */
-                                                                    echo __('Add to Cart') ?>">
+                                                                    echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                             </button>
                                                         <?php endif; ?>
                                                     <?php else: ?>
@@ -276,9 +276,9 @@ switch ($type = $block->getType()) {
                                                                     data-mage-init='{"redirectUrl": {"url": "<?php /* @escapeNotVerified */
                                                                     echo $block->getAddToCartUrl($_item) ?>"}}'
                                                                     type="button" title="<?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?>">
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                             </button>
                                                         <?php else: ?>
                                                             <?php $postDataHelper = $this->helper('Magento\Framework\Data\Helper\PostHelper');
@@ -288,9 +288,9 @@ switch ($type = $block->getType()) {
                                                                     data-post='<?php /* @escapeNotVerified */
                                                                     echo $postData; ?>' type="button"
                                                                     title="<?php /* @escapeNotVerified */
-                                                                    echo __('Add to Cart') ?>">
+                                                                    echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                             </button>
                                                         <?php endif; ?>
                                                     <?php else: ?>

@@ -91,7 +91,7 @@
                                                 <?php echo $block->getBlockHtml('formkey') ?>
                                                 <button type="submit" class="action tocart btn-action btn-cart">
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart'); ?></span>
+                                                            echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart"); ?></span>
                                                 </button>
                                             </form>
                                         <?php else: ?>

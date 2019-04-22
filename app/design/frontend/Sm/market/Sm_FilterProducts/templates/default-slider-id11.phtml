@@ -174,10 +174,10 @@ $_config            = $this->helper('Sm\Market\Helper\Data');
                                                        echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
                                                 <?php echo $block->getBlockHtml('formkey') ?>
                                                 <button type="submit"
-                                                        title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                        title="<?php echo $block->escapeHtml(__($_product->getPreorder() ? "Pre-Order" : "Add To Cart")); ?>"
                                                         class="action tocart primary btn-action btn-cart">
 													<span><?php /* @escapeNotVerified */
-                                                        echo __('Add to Cart') ?></span>
+                                                        echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                 </button>
                                             </form>
                                         <?php else: ?>

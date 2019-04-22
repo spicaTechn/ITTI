@@ -177,10 +177,16 @@ $homeStyle          = $_config->getThemeLayout('home_style');
                                                                echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
                                                         <?php echo $block->getBlockHtml('formkey') ?>
                                                         <button type="submit"
-                                                                title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                                title="<?php echo $block->escapeHtml(__($_product->getPreorder() ? "Pre-Order" : "Add To Cart")); ?>"
                                                                 class="action tocart primary btn-action btn-cart">
+                                                                <?php 
+                                                    $btn_t = "Add to Cart";
+                                                    if($_product->getPreorder()){
+                                                        $btn_t = "Pre-Order";
+                                                    }
+                                                    ?>
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($btn_t) ?></span>
                                                         </button>
                                                     </form>
                                                 <?php else: ?>
@@ -226,10 +232,16 @@ $homeStyle          = $_config->getThemeLayout('home_style');
                                                                echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
                                                         <?php echo $block->getBlockHtml('formkey') ?>
                                                         <button type="submit"
-                                                                title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                                title="<?php echo $block->escapeHtml(__($_product->getPreorder() ? "Pre-Order" : "Add To Cart")); ?>"
                                                                 class="action tocart primary btn-action btn-cart">
+                                                                <?php 
+                                                    $btn_t = "Add to Cart";
+                                                    if($_product->getPreorder()){
+                                                        $btn_t = "Pre-Order";
+                                                    }
+                                                    ?>
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($btn_t) ?></span>
                                                         </button>
                                                     </form>
                                                 <?php else: ?>
@@ -364,10 +376,16 @@ $homeStyle          = $_config->getThemeLayout('home_style');
                                                            echo $postParams['data'][Action::PARAM_NAME_URL_ENCODED]; ?>">
                                                     <?php echo $block->getBlockHtml('formkey') ?>
                                                     <button type="submit"
-                                                            title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                            title="<?php echo $block->escapeHtml(__($_product->getPreorder() ? "Pre-Order" : "Add To Cart")); ?>"
                                                             class="action tocart btn-action btn-cart">
+                                                    <?php 
+                                                    $btn_t = "Add to Cart";
+                                                    if($_product->getPreorder()){
+                                                        $btn_t = "Pre-Order";
+                                                    }
+                                                    ?>
 														<span><?php /* @escapeNotVerified */
-                                                            echo __('Add to Cart') ?></span>
+                                                            echo __($btn_t) ?></span>
                                                     </button>
                                                 </form>
                                             <?php else: ?>

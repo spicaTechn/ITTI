@@ -116,9 +116,9 @@ $_cls = (!$check_type) ? 'col-lg-' . $_nb_column1 . ' col-md-' . $_nb_column2 . 
                                                         data-mage-init='{"redirectUrl":{"url":"<?php /* @escapeNotVerified */
                                                         echo $block->getAddToCartUrl($_product) ?>"}}'
                                                         type="button" title="<?php /* @escapeNotVerified */
-                                                echo __('Add to Cart') ?>">
+                                                echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 													<span><?php /* @escapeNotVerified */
-                                                        echo __('Add to Cart') ?></span>
+                                                        echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                 </button>
                                             <?php else: ?>
                                                 <?php
@@ -129,9 +129,9 @@ $_cls = (!$check_type) ? 'col-lg-' . $_nb_column1 . ' col-md-' . $_nb_column2 . 
                                                         data-post='<?php /* @escapeNotVerified */
                                                         echo $postData; ?>'
                                                         type="button" title="<?php /* @escapeNotVerified */
-                                                echo __('Add to Cart') ?>">
+                                                echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?>">
 													<span><?php /* @escapeNotVerified */
-                                                        echo __('Add to Cart') ?></span>
+                                                        echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
                                                 </button>
                                             <?php endif; ?>
                                         <?php else: ?>

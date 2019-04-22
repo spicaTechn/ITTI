@@ -242,10 +242,10 @@ if ($enableLadyLoading) {
 														<?php echo $block->getBlockHtml('formkey') ?>
                                                         <input name="form_key" type="hidden" value="<?php echo $session->getFormKey(); ?>"/>
 														<button type="submit"
-                                                                title="<?php echo $block->escapeHtml(__('Add to Cart')); ?>"
+                                                                title="<?php echo $block->escapeHtml(__($_product->getPreorder() ? "Pre-Order" : "Add To Cart")); ?>"
                                                                 class="action tocart primary">
 															<span><?php /* @escapeNotVerified */
-																echo __('Add to Cart') ?></span>
+																echo __($_product->getPreorder() ? "Pre-Order" : "Add To Cart") ?></span>
 														</button>
 													</form>
 												<?php else: ?>

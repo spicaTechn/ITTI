@@ -9,7 +9,19 @@
 /** @var $block \Magento\Catalog\Block\Product\View */
 ?>
 <?php $_product = $block->getProduct(); ?>
-<?php $buttonTitle = __('Add to Cart'); ?>
+<?php $preordernote= $_product->getPreordernote();?>
+<?php $buttonTitle = __('Add to Cart'); 
+if($_product->getPreorder()){
+	$buttonTitle = __('Pre-Order'); 
+}else{
+	$buttonTitle = __('Add to Cart'); 
+}
+
+if($_product->getPreorder() && $preordernote){
+ echo '<div class="preorder-note" style="border-radius: 25px;background: #FED557;padding: 8px;width: 200px;font-weight:300px">'.$preordernote.'</div><br>';
+}
+echo '<div class="preorder-note" style="border-radius: 25px;padding: 8px;width: 200px;font-weight:300px">**Price is inclusive of VAT**</div><br>';
+?>
 <?php if ($_product->isSaleable()): ?>
     <div class="box-tocart">
         <div class="fieldset">
