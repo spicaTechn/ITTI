@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+* BSS Commerce Co.
+*
+* NOTICE OF LICENSE
+*
+* This source file is subject to the EULA
+* that is bundled with this package in the file LICENSE.txt.
+* It is also available through the world-wide-web at this URL:
+* http://bsscommerce.com/Bss-Commerce-License.txt
+*
+* =================================================================
+*                 MAGENTO EDITION USAGE NOTICE
+* =================================================================
+* This package designed for Magento COMMUNITY edition
+* BSS Commerce does not guarantee correct work of this extension
+* on any other Magento edition except Magento COMMUNITY edition.
+* BSS Commerce does not provide extension support in case of
+* incorrect edition usage.
+* =================================================================
+*
+* @category   BSS
+* @package    Bss_BundleOptionImage
+* @author     Extension Team
+* @copyright  Copyright (c) 2014-2016 BSS Commerce Co. ( http://bsscommerce.com )
+* @license    http://bsscommerce.com/Bss-Commerce-License.txt
+*/
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="bss" translate="label" sortOrder="300">
+            <label>Bss Commerce</label>
+        </tab>
+        <section id="bundle_option_image" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label> Bundle Option Image</label>
+            <tab>bss</tab>
+            <resource>Bss_BundleOptionImage::config</resource>
+            <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Options</label>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment><![CDATA[Choose 'Yes' to enable module.<br>Version 1.0.1]]></comment>
+                </field>
+                <field id="class_option_bundle" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Class Options of Bundle Product</label>
+                    <comment><![CDATA[Edit this field to add classes.]]></comment>
+                    <validate>validate-no-empty</validate>
+                </field>
+            </group>
+            <group id="img" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Image Size Settings</label>
+                <field id="product_image_width" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Image Width (px)</label>
+                    <comment><![CDATA[]]></comment>
+                    <validate>validate-no-empty validate-digits validate-greater-than-zero</validate>
+                </field>
+                <field id="product_image_height" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Image Height (px)</label>
+                    <comment><![CDATA[]]></comment>
+                    <validate>validate-no-empty validate-digits validate-greater-than-zero</validate>
+                </field>
+            </group>
+            <group id="multiple_option" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Multiple Select </label>
+                <field id="number_item" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Number of Images per Slider</label>
+                    <comment><![CDATA[Number of images shown in a slider]]></comment>
+                    <validate>validate-no-empty validate-digits validate-greater-than-zero</validate>
+                </field>
+                <field id="speed_slide" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Slide Speed</label>
+                    <comment><![CDATA[Transition duration (in milliseconds) between two continuous slides. // ex = speed:400;]]></comment>
+                <validate>validate-digits validate-greater-than-zero</validate>
+                </field>
+                <field id="slide_auto" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Auto Slider</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

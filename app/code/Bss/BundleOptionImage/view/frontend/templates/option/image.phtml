@@ -1,0 +1,67 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * BSS Commerce does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * BSS Commerce does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   BSS
+ * @package    Bss_BundleOptionImage
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+$product = $block->getProduct();
+$jsonConfig = $block->getJsonConfig();
+?>
+<?php
+$childrenIds = [];
+$options = json_decode($jsonConfig);
+foreach ($options->options as  $selections){
+    foreach ($selections->selections as  $optionItem) {
+         $childrenIds[] = $optionItem->optionId;
+    }
+}
+?>
+<?php if ($block->isEnabled()): ?>
+<div class="all-image-bundle" style="display: none;">
+    <?php foreach ($childrenIds as  $id): ?>
+        <?php $_product = $block->getLoadProduct($id); ?>
+        <?php if (!$_product->getImage() || $_product->getImage() =='no_selection') continue; ?>
+        <div id="child-product-<?php echo $_product->getId() ?>" class="image-child-bundle child-product-<?php echo $_product->getId() ?>" >
+            <img  class="img" src="<?php echo $block->getOptionImage($_product, 'category_page_list');?>">
+        </div>
+    <?php endforeach ?>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Bss_BundleOptionImage/js/option_image": {
+                "jsonbundle": <?php echo $block->getJsonConfig() ?>,
+                "class_option_bundle": "<?php echo $block->getClassOption() ?>",
+                "height": <?php echo $block->getImageHeight() ?>,
+                "width": <?php echo $block->getImageWidth() ?>,
+                "itemsDesktop": <?php echo $block->getNumberItemSlide() ?>,
+                "speedSlide": "<?php echo $block->getSpeedSlide() ?>",
+                "autoSlide": "<?php echo $block->getSlideAuto() ?>"
+            }
+        }
+    }
+</script>
+<?php endif ?>
